@@ -6,4 +6,3 @@ This is an example of using the global setup/teardown apis alone with the async 
 
 ![](screenshot.png)
 
-> Please file an issue or send [me](https://twitter.com/xfumihiro) a DM if you have any questions.

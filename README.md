@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/xfumihiro/jest-puppeteer-example/tree/master.svg?style=svg)](https://circleci.com/gh/xfumihiro/jest-puppeteer-example/tree/master)
+[![CircleCI](https://circleci.com/gh/mikenguyen69/jest-puppeteer-example/tree/master.svg?style=svg)](https://circleci.com/gh/mikenguyen69/jest-puppeteer-example/tree/master)
 
 # jest-puppeteer-example
 

@@ -20,5 +20,5 @@ const create_product_setup = {
     delay: 10000
 }
 
-run(create_product_setup);
+//run(create_product_setup);
 

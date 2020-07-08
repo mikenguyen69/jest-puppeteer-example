@@ -1,6 +1,3 @@
-
-import { run } from '../../execute';
-
 const create_product_setup = {
     steps: [
         {type: 'text', focus: 'input[name=name]', value: 'Test item only'},
@@ -20,5 +17,6 @@ const create_product_setup = {
     delay: 10000
 }
 
+//const run =  require('../../execute');
 //run(create_product_setup);
 

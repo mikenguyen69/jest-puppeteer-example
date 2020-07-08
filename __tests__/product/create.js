@@ -1,5 +1,5 @@
 
-const testRunner = require('../../execute');
+import { run } from '../../execute';
 
 const create_product_setup = {
     steps: [
@@ -20,5 +20,5 @@ const create_product_setup = {
     delay: 10000
 }
 
-testRunner.run(create_product_setup);
+run(create_product_setup);
 

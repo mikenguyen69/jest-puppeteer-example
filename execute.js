@@ -1,3 +1,4 @@
+const path = require('path');
 
 module.exports.run = function(testSetup) {
     const timeout = 15000;
@@ -62,8 +63,10 @@ async function handleTextInput(page, input) {
 }
 
 async function handleFileInput(page, input) {
+    const file = path.join(__dirname, "__tests__", input.value);
+    console.log(file);
     const fileInput = await page.$(input.focus);
-    await fileInput.uploadFile(input.value);
+    await fileInput.uploadFile(file);
 }
 
 async function handleSubmit(page, input) {

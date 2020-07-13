@@ -17,28 +17,5 @@ const create_product_setup = {
     delay: 10000
 }
 
-//const run =  require('../../execute');
-//run(create_product_setup);
-
-const timeout = 5000
-
-describe(
-  '/ (Home Page)',
-  () => {
-    let page
-    beforeAll(async () => {
-      page = await global.__BROWSER__.newPage()
-      await page.goto('https://google.com')
-    }, timeout)
-
-    afterAll(async () => {
-      await page.close()
-    })
-
-    it('should load without error', async () => {
-      let text = await page.evaluate(() => document.body.textContent)
-      expect(text).toContain('google')
-    })
-  },
-  timeout
-)
+const run =  require('../../execute');
+run(create_product_setup);

@@ -1,7 +1,7 @@
 
 module.exports.run = function(testSetup) {
     const timeout = 15000;
-
+    
     describe(
         testSetup.describe,
         () => {
@@ -9,13 +9,13 @@ module.exports.run = function(testSetup) {
             beforeAll(async () => {
                 page = await global.__BROWSER__.newPage()
     
-                await page.goto(testSetup.url)
-                
-    
                 for(var i=0; i < testSetup.steps.length; i++) {
                     var input = testSetup.steps[i];
-    
-                    if (input.type === 'text') {
+
+                    if (input.type === 'link') {
+                        await page.goto(input.value);
+                    }
+                    else if (input.type === 'text') {
                         await handleTextInput(page, input);
                     }
                     else if (input.type === 'file') {
@@ -23,6 +23,9 @@ module.exports.run = function(testSetup) {
                     }
                     else if (input.type === 'submit') {
                         await handleSubmit(page, input);
+                    }
+                    else if (input.type === 'delay') {
+                        await page.waitFor(input.value);
                     }
                 }
     
@@ -67,6 +70,8 @@ async function handleFileInput(page, input) {
 }
 
 async function handleSubmit(page, input) {
-    const submitBtn = await page.$(input.focus);
-    await submitBtn.click();
+    
+    // const submitBtn = await page.$(input.focus);
+    // await submitBtn.click();
+    await page.$eval(input.focus, elem => elem.click());
 }
